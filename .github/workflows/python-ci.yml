@@ -9,32 +9,6 @@ on:
       - main
 
 jobs:
-  build-and-test:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        project-path: ${{ fromJson(needs.detect-projects.outputs.project_paths) }}
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.9
-
-      - name: Install project dependencies
-        run: |
-          cd ${{ matrix.project-path }}
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
-
-      - name: Run tests
-        run: |
-          cd ${{ matrix.project-path }}
-          python -m unittest discover -s . -p "test_*.py"
-
   detect-projects:
     name: Detect Projects
     runs-on: ubuntu-latest
@@ -48,5 +22,37 @@ jobs:
       - name: Find project folders
         id: set-project-paths
         run: |
+          # Find directories with requirements.txt and store in JSON array
           project_paths=$(find . -type f -name requirements.txt -exec dirname {} \; | jq -R . | jq -s .)
+          # Clean up any unexpected spaces or new lines
+          project_paths=$(echo $project_paths | tr -d '\n' | tr -d '[:space:]')
+          echo "project_paths=$project_paths" >> $GITHUB_ENV
           echo "::set-output name=project_paths::$project_paths"
+
+  build-and-test:
+    needs: detect-projects
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        project-path: ${{ fromJson(needs.detect-projects.outputs.project_paths) }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Docker
+        uses: docker/setup-buildx-action@v1
+
+      - name: Build Docker container
+        run: |
+          cd ${{ matrix.project-path }}
+          # Create a Docker image tag that is valid
+          project_name=$(echo ${{ matrix.project-path }} | tr -cd '[:alnum:]_')
+          docker build -t my_project_image_$project_name .
+
+      - name: Run Docker container
+        run: |
+          cd ${{ matrix.project-path }}
+          # Use the valid Docker image tag for running
+          project_name=$(echo ${{ matrix.project-path }} | tr -cd '[:alnum:]_')
+          docker run my_project_image_$project_name
