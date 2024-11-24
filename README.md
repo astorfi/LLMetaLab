@@ -1,5 +1,9 @@
 # 🚀✨ **LLMetaLab: Pioneering Large Language Model Innovations** 🧠💡
 
+[![Build Status](https://github.com/astorfi/LLMetaLab/actions/workflows/python-ci.yml/badge.svg)](https://github.com/YourUsername/LLMetaLab/actions)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+![Python version](https://img.shields.io/badge/python-3.9-blue)
+
 *🚧 Under Construction - Stay Tuned for Cutting-Edge Updates! 🛠️🔍*
 
 Welcome to **LLMetaLab**, your comprehensive hub for understanding and building with Large Language Models (LLMs). Here, we explore everything from foundational concepts to cutting-edge research, practical applications, and hands-on projects. Each module is designed to help you master the technologies driving LLMs, including **Retrieval-Augmented Generation (RAG)**, model alignment, multi-modal integrations, and much more.
