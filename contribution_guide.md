@@ -37,11 +37,6 @@ If you're interested in adding or improving code (tutorials, automation scripts,
    git push origin your-branch-name
    ```
 
-#### ⚙️ **Enforcing Code Quality and Consistency**
-- **Docker Requirement**: To ensure the reproducibility and consistency of all code contributions, each Python script or project must include a `Dockerfile`. This guarantees that the code runs end-to-end with the necessary dependencies, isolated from other parts of the repository.
-- **Environment Isolation**: We use a `requirements.txt` file for project-wide dependencies. However, contributors are encouraged to add their own `requirements.txt` or `environment.yml` file for isolated scripts, ensuring backward compatibility with existing code.
-- **Testing New Dependencies**: If you add new packages, please ensure that they do not break compatibility with existing code. Use Docker to validate your setup, and consider using tools like `tox` for multi-environment testing. Details can be found in the [Setup Guide](setup_guide.md).
-
 ### 5. **Review Existing Pull Requests** 🔍
 A great way to contribute is to help review [open pull requests](https://github.com/astorfi/LLMetaLab/pulls). Your insights could help improve someone else's contribution and ensure high-quality additions.
 
@@ -62,8 +57,27 @@ To contribute effectively, follow these steps to set up your environment:
    ```bash
    git checkout -b feature/your-feature-name
    ```
-4. **Run Using Docker**
-   For new contributions, create a `Dockerfile` to encapsulate dependencies and test your code in a Docker environment to ensure consistency across different systems.
+
+## ✅ **Contribution Requirements**
+
+### 1. **Use Docker for All Contributions** 🐳
+Every contribution must include a `Dockerfile` to ensure an isolated and reproducible environment:
+- **Add a Dockerfile** that includes all the necessary dependencies and configurations to run your code.
+- This allows us to ensure that your contribution works independently of other projects in the repository.
+
+### 2. **Provide Dependencies in `requirements.txt`** 📦
+- Each contribution must include a `requirements.txt` file that lists the exact dependencies your code needs.
+- This ensures that we can run your project with the correct library versions.
+
+### 3. **Include Tests for Your Code** 🧪
+- All contributions must include a **test file** (e.g., `test_project.py`) that tests the core functionality.
+- We use **pytest** for testing, and it should run successfully inside your Docker container.
+
+### 4. **Ensure CI/CD Compatibility** ⚙️
+- All contributions must pass our automated CI/CD pipeline, which will:
+  - **Build** your Docker container.
+  - **Run** the tests you provided inside the Docker container.
+- Only contributions that pass all checks will be merged.
 
 ## 🔄 **How to Submit Changes**
 1. **Pull Request Guidelines**:
@@ -76,13 +90,11 @@ To contribute effectively, follow these steps to set up your environment:
    - Have you provided meaningful commit messages?
    - Have you checked for typos, grammar issues, and code formatting?
    - Have you linked any related issues?
-   - **Docker and Compatibility Check**: Verify that your Docker setup runs successfully, and confirm compatibility with existing code.
 
 ## ✅ **Contribution Guidelines**
 - **Follow the Folder Structure**: LLMetaLab follows a structured folder layout (see the README for full details). Ensure any new content is placed in the correct folder.
 - **Documentation and Comments**: Document your changes wherever necessary. Your contributions should be understandable to other readers and contributors.
 - **Code Style**: Follow PEP8 guidelines for Python. Maintain clean, readable, and reusable code. Use comments to explain non-obvious code logic.
-- **Testing New Code**: Every code addition must be tested in an isolated Docker container to verify functionality.
 - **Respect Diversity**: We believe in maintaining a healthy and inclusive community. Be respectful when providing feedback and always assume good intentions.
 
 ## 🙌 **First-Time Contributors Welcome!**
@@ -101,4 +113,3 @@ We follow a [**Code of Conduct**](CODE_OF_CONDUCT.md) to ensure a welcoming envi
 ---
 
 **Thank you again for considering contributing to LLMetaLab**. Let's collaborate, innovate, and make a positive impact in the world of Large Language Models together! 🌟
-
