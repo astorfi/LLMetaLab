@@ -43,9 +43,11 @@ jobs:
       - name: Build Docker container
         run: |
           cd ${{ matrix.project-path }}
-          docker build -t my_project_image_${{ matrix.project-path }} .
+          project_name=$(echo ${{ matrix.project-path }} | tr './' '__')
+          docker build -t my_project_image_$project_name .
 
       - name: Run Docker container
         run: |
           cd ${{ matrix.project-path }}
-          docker run my_project_image_${{ matrix.project-path }}
+          project_name=$(echo ${{ matrix.project-path }} | tr './' '__')
+          docker run my_project_image_$project_name
