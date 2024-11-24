@@ -111,7 +111,7 @@ By following this learning path, you'll build a foundation and progress to advan
 ## 📌 **Getting Started**
 - **Prerequisites**: Ensure you have Python, PyTorch, Docker, etc., installed.
 - **Setup Guide**: Follow [**setup_guide.md**](setup_guide.md) to get started.
-- **Contribution Guide**: Learn how to contribute to LLMetaLab using our [**contribution_guide.md**](open_source/contribution_guide.md).
+- **Contribution Guide**: Learn how to contribute to LLMetaLab using our [**contribution_guide.md**](contribution_guide.md).
 
 ## 🗂️ **Repository Structure Reference**
 For a comprehensive reference of the full folder structure, see [**repository_structure.md**](repository_structure.md).
