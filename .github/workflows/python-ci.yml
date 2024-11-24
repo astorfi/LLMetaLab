@@ -9,32 +9,6 @@ on:
       - main
 
 jobs:
-  build-and-test:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        project-path: ${{ fromJson(needs.detect-projects.outputs.project_paths) }}
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.9
-
-      - name: Install project dependencies
-        run: |
-          cd ${{ matrix.project-path }}
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
-
-      - name: Run tests
-        run: |
-          cd ${{ matrix.project-path }}
-          python -m unittest discover -s . -p "test_*.py"
-
   detect-projects:
     name: Detect Projects
     runs-on: ubuntu-latest
@@ -49,4 +23,29 @@ jobs:
         id: set-project-paths
         run: |
           project_paths=$(find . -type f -name requirements.txt -exec dirname {} \; | jq -R . | jq -s .)
+          echo "project_paths=$project_paths" >> $GITHUB_ENV
           echo "::set-output name=project_paths::$project_paths"
+
+  build-and-test:
+    needs: detect-projects
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        project-path: ${{ fromJson(needs.detect-projects.outputs.project_paths) }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Docker
+        uses: docker/setup-buildx-action@v1
+
+      - name: Build Docker container
+        run: |
+          cd ${{ matrix.project-path }}
+          docker build -t my_project_image_${{ matrix.project-path }} .
+
+      - name: Run Docker container
+        run: |
+          cd ${{ matrix.project-path }}
+          docker run my_project_image_${{ matrix.project-path }}
