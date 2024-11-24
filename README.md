@@ -36,6 +36,12 @@ The repository is designed for both beginners and experienced practitioners to l
        - **README.md**: Understanding models like CLIP, DALL·E, and Whisper.
        - **Examples/**: Projects involving multi-modal AI, including image captioning and robotics integration.
 
+   - **Agent-Based Systems and Multi-Agent Collaboration**
+     - `agent_based_systems/`
+       - **README.md**: Overview of agent-based systems and multi-agent collaboration in LLMs.
+       - **Tutorials/**: Step-by-step guides for building autonomous agents using LLMs, such as task-oriented agents and multi-agent coordination.
+       - **Projects/**: Examples of systems where multiple LLMs collaborate to achieve complex objectives, such as negotiation, planning, distributed problem solving, swarm intelligence, and coordinated task-solving models.
+
 ### 2. **Emerging and Advanced Research Topics**
    - **Causal Inference**
      - `causal_inference/`
@@ -57,6 +63,8 @@ The repository is designed for both beginners and experienced practitioners to l
      - `memory_architectures/`
        - **README.md**: Recurrent and attention-based memory techniques.
        - **Projects/**: Conversational agents with persistent memory.
+
+   - 
 
 ### 3. **Practical and Real-World Applications**
    - **RAG for Enterprise Solutions**
