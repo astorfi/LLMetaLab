@@ -114,7 +114,7 @@ By following this learning path, you'll build a foundation and progress to advan
 - **Contribution Guide**: Learn how to contribute to LLMetaLab using our [**contribution_guide.md**](open_source/contribution_guide.md).
 
 ## 🗂️ **Repository Structure Reference**
-For a comprehensive reference of the full folder structure, see [**repository_structure.md**](folder_structure/repository_structure.md).
+For a comprehensive reference of the full folder structure, see [**repository_structure.md**](repository_structure.md).
 
 ## 📜 **License**
 - Please adhere to relevant licensing guidelines for responsible use.
