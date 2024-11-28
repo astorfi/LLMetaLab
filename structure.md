@@ -1,3 +1,4 @@
+```
 LLMetaLab
 ├── PULL_REQUEST_TEMPLATE.md
 ├── README.md
@@ -218,5 +219,4 @@ LLMetaLab
             ├── optimization_techniques.md
             ├── prompt_debugging.md
             └── prompt_variation_examples.md
-
-65 directories, 155 files
+```
