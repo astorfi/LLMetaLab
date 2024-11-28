@@ -1,5 +1,5 @@
-```
 LLMetaLab
+```
 ├── PULL_REQUEST_TEMPLATE.md
 ├── README.md
 ├── contribution_guide.md
@@ -22,62 +22,62 @@ LLMetaLab
 └── src
     ├── Core_Technological_Areas
     │   ├── Alignment_and_Safety
-    │   │   ├── Assessments
-    │   │   │   ├── concept_quizzes.md
-    │   │   │   ├── final_project.md
-    │   │   │   └── hands_on_exercises.md
-    │   │   ├── Case_Studies_and_Advanced_Topics
-    │   │   │   ├── case_studies_in_alignment.md
-    │   │   │   ├── emerging_threats_in_ai.md
-    │   │   │   ├── failures_in_ai_alignment.md
-    │   │   │   ├── multi_agent_safety.md
-    │   │   │   └── scaling_alignment_challenges.md
-    │   │   ├── Concepts_and_Techniques
-    │   │   │   ├── alignment_challenges.md
-    │   │   │   ├── alignment_principles.md
-    │   │   │   ├── bias_detection_and_mitigation.md
-    │   │   │   ├── ethical_frameworks_for_llms.md
-    │   │   │   ├── evaluation_metrics.md
-    │   │   │   ├── interpretability_methods.md
-    │   │   │   ├── red_teaming_and_adversarial_testing.md
-    │   │   │   ├── reinforcement_learning_methods.md
-    │   │   │   ├── rlhf.md
-    │   │   │   ├── robustness_testing.md
-    │   │   │   └── safety_tooling_overview.md
-    │   │   ├── Foundations
-    │   │   │   ├── ethics_in_ai.md
-    │   │   │   ├── introduction_to_ai.md
-    │   │   │   ├── introduction_to_alignment_and_safety.md
-    │   │   │   └── key_terms_and_concepts.md
-    │   │   ├── Projects
-    │   │   │   ├── adversarial_scenarios
-    │   │   │   │   ├── scenario_design.md
-    │   │   │   │   └── testing_and_analysis.md
-    │   │   │   ├── aligned_chatbot
-    │   │   │   │   ├── dataset_preparation.md
-    │   │   │   │   ├── evaluation.md
-    │   │   │   │   ├── model_training.md
-    │   │   │   │   └── project_overview.md
-    │   │   │   ├── bias_detection_project
-    │   │   │   │   ├── bias_analysis.md
-    │   │   │   │   ├── collecting_data.md
-    │   │   │   │   └── mitigation_experiments.md
-    │   │   │   └── safe_deployment_project
-    │   │   │       ├── deployment_strategies.md
-    │   │   │       └── user_feedback.md
-    │   │   ├── Resources
-    │   │   │   ├── community_and_forums.md
-    │   │   │   ├── glossary.md
-    │   │   │   ├── papers_and_research.md
-    │   │   │   ├── reading_list.md
-    │   │   │   └── tools_and_frameworks.md
-    │   │   └── Tutorials
-    │   │       ├── adversarial_testing_guide.md
-    │   │       ├── bias_detection_tutorial.md
-    │   │       ├── ethical_model_design.md
-    │   │       ├── interpreting_llms.md
-    │   │       ├── rlhf_tutorial.md
-    │   │       └── safe_deployment_guide.md
+    │   │   ├── 1_Foundations
+    │   │   │   ├── 1_introduction_to_ai.md
+    │   │   │   ├── 2_ethics_in_ai.md
+    │   │   │   ├── 3_introduction_to_alignment_and_safety.md
+    │   │   │   └── 4_key_terms_and_concepts.md
+    │   │   ├── 2_Concepts_and_Techniques
+    │   │   │   ├── 10_interpretability_methods.md
+    │   │   │   ├── 11_safety_tooling_overview.md
+    │   │   │   ├── 1_alignment_principles.md
+    │   │   │   ├── 2_alignment_challenges.md
+    │   │   │   ├── 3_ethical_frameworks_for_llms.md
+    │   │   │   ├── 4_rlhf.md
+    │   │   │   ├── 5_reinforcement_learning_methods.md
+    │   │   │   ├── 6_bias_detection_and_mitigation.md
+    │   │   │   ├── 7_robustness_testing.md
+    │   │   │   ├── 8_red_teaming_and_adversarial_testing.md
+    │   │   │   └── 9_evaluation_metrics.md
+    │   │   ├── 3_Tutorials
+    │   │   │   ├── 1_ethical_model_design.md
+    │   │   │   ├── 2_bias_detection_tutorial.md
+    │   │   │   ├── 3_rlhf_tutorial.md
+    │   │   │   ├── 4_adversarial_testing_guide.md
+    │   │   │   ├── 5_interpreting_llms.md
+    │   │   │   └── 6_safe_deployment_guide.md
+    │   │   ├── 4_Projects
+    │   │   │   ├── 4_1_aligned_chatbot
+    │   │   │   │   ├── 1_project_overview.md
+    │   │   │   │   ├── 2_dataset_preparation.md
+    │   │   │   │   ├── 3_model_training.md
+    │   │   │   │   └── 4_evaluation.md
+    │   │   │   ├── 4_2_adversarial_scenarios
+    │   │   │   │   ├── 1_scenario_design.md
+    │   │   │   │   └── 2_testing_and_analysis.md
+    │   │   │   ├── 4_3_bias_detection_project
+    │   │   │   │   ├── 1_collecting_data.md
+    │   │   │   │   ├── 2_bias_analysis.md
+    │   │   │   │   └── 3_mitigation_experiments.md
+    │   │   │   └── 4_4_safe_deployment_project
+    │   │   │       ├── 1_deployment_strategies.md
+    │   │   │       └── 2_user_feedback.md
+    │   │   ├── 5_Case_Studies_and_Advanced_Topics
+    │   │   │   ├── 1_case_studies_in_alignment.md
+    │   │   │   ├── 2_failures_in_ai_alignment.md
+    │   │   │   ├── 3_scaling_alignment_challenges.md
+    │   │   │   ├── 4_multi_agent_safety.md
+    │   │   │   └── 5_emerging_threats_in_ai.md
+    │   │   ├── 6_Assessments
+    │   │   │   ├── 1_concept_quizzes.md
+    │   │   │   ├── 2_hands_on_exercises.md
+    │   │   │   └── 3_final_project.md
+    │   │   └── Resources
+    │   │       ├── community_and_forums.md
+    │   │       ├── glossary.md
+    │   │       ├── papers_and_research.md
+    │   │       ├── reading_list.md
+    │   │       └── tools_and_frameworks.md
     │   ├── CODE_OF_CONDUCT.md
     │   ├── Fine_Tuning_and_Instruction_Tuning
     │   │   ├── Concepts
